@@ -1,7 +1,5 @@
-
 import React from 'react';
 import './App.css';
-
 
 class Bookshelf extends React.Component {
 	
@@ -158,9 +156,6 @@ class Bookshelf extends React.Component {
 							</div>
 						</div>
 					</div>
-				</div>
-				<div className="open-search">
-					<a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
 				</div>
 			</div>
 		)
