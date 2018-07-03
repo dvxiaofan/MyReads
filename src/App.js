@@ -48,11 +48,14 @@ class BooksApp extends React.Component {
           </div>
         )}/>
         <Route exact path='/search' render={() => (
-          <SearchBook/>
+          <SearchBook
+            moveBook = {this.moveBook}
+            booksOnShelf = {this.state.books}
+          />
         )} />
       </div>
     )
   }
 }
 
-export default BooksApp
+export default BooksApp;
