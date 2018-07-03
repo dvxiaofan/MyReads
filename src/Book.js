@@ -5,11 +5,11 @@ class Book extends Component {
 
 	static propTypes = {
 		book: PropTypes.object.isRequired,
-		onMoveBook: PropTypes.func.isRequired
+		moveBook: PropTypes.func.isRequired
 	}
 
 	updateBook(shelf) {
-		this.props.onMoveBook(this.props.book, shelf);
+		this.props.moveBook(this.props.book, shelf);
 	}
 
 	render() {
