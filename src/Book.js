@@ -21,7 +21,8 @@ class Book extends Component {
 					<div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks !== undefined ? 
 						book.imageLinks.smallThumbnail : ''})` }}></div>
 					<div className="book-shelf-changer">
-						<select value={book.shelf} onChange={(e) => this.updateBook(e.target.value)} >
+						{/* 对book的shelf属性进行判断， 如果是在搜索页出现的book， 则shelf默认为none */}
+						<select value={ book.shelf ? book.shelf : 'none'} onChange={(event) => this.updateBook(event.target.value)} >
 							<option value="" disabled>Move to...</option>
 							<option value="currentlyReading">Currently Reading</option>
 							<option value="wantToRead">Want to Read</option>
