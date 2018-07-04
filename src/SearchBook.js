@@ -24,7 +24,6 @@ class SearchBook extends React.Component {
 			this.setState({ query: '', books: [] })
 		} else {
 			this.setState({ query: query.trim() })
-			// 获取搜索数据 （做防抖处理）
 			BooksAPI.search(query).then(books => {
 				if (books.error) {
 					books = [];
@@ -41,10 +40,11 @@ class SearchBook extends React.Component {
 				<div className="search-books-bar">
 					<Link className="close-search" to='/'>Close</Link>
 					<div className="search-books-input-wrapper">
+						{/* 做防抖处理 */}
 						<DebounceInput
 							autoFocus
 							placeholder="Search by title or author"
-							// 停顿500ms后才触发搜索
+							// 延时进行搜索
 							debounceTimeout={500}
 							// 监控输入框的状态变化
 							onChange={event => this.updateQuery(event.target.value)}
